@@ -16,8 +16,9 @@ cask "keymidi" do
     KeyMIDI needs the macOS Accessibility permission for its global keyboard
     hook: System Settings → Privacy & Security → Accessibility → enable KeyMIDI.
 
-    Early releases are not yet signed/notarized, so install with --no-quarantine
-    (otherwise macOS will refuse to open the app):
-      brew install --cask --no-quarantine kadetXx/tap/keymidi
+    Releases are not yet signed/notarized, so macOS quarantines the app on
+    install. Clear it once with:
+      xattr -dr com.apple.quarantine "/Applications/KeyMIDI.app"
+    or approve it under System Settings → Privacy & Security → Open Anyway.
   CAVEAT
 end
